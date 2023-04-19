@@ -1,0 +1,20 @@
+use("platzi_store")
+
+db.stores.insertOne(
+    {
+        storeId: 'ST001',
+        name: 'Julian Store',
+        address: 'calle 5b'
+    }
+)
+
+db.stores_details.insertOne(
+    {
+        storeId: 'ST001',
+        description: 'Lorem',
+        manager: {
+            email: 'manager@gamil.com',
+            cellphone: '3222334137'
+        }
+    }
+)
