@@ -1,0 +1,19 @@
+use("platzi_store")
+
+db.users.insertOne(
+    {
+        last_name: 'Zully',
+        email: 'Zully@gmail.com',
+        password: 'Hola1234',
+        address: {
+            street: 'cr 891',
+            city: 'Cali',
+            zip: '13011'
+        },
+        shipping_address: {
+            street: 'cr 891',
+            city: 'Cali',
+            zip: '13011'
+        }
+    }
+)
