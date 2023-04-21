@@ -1,0 +1,32 @@
+use("platzi_store")
+
+db.orders.find()
+
+db.users.find();
+
+db.orders.aggregate([
+  {
+    $match: {
+      _id: ObjectId('6442b44b9236d889c187c575')
+    }
+  },
+  {
+    $lookup: {
+      from: 'users',
+      localField: 'user_id',
+      foreignField: '_id',
+      as: 'user'
+    }
+  }
+])
+
+db.users.aggregate([
+  {
+    $lookup: {
+      from: 'orders',
+      localField: '_id',
+      foreignField: 'user_id',
+      as: 'orders'
+    }
+  }
+])
